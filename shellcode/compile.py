@@ -26,25 +26,36 @@ def generateBinary(asm_filename):
         raise ValueError(errstr)
  
 def extractPayload():
+
         val = subprocess.check_output(["objdump", "-d", binname])
         res = val.partition(r"_start")[2]
         res = re.sub(r".*:\w*(.*)", r"\1", res)
         print res
-        res = '\n'.join([ " " + x.strip() for x in res.split("\n") ])
-        res = res.replace('dec', '')
-        print res
+        lines = res.split("\n")
+        bytes = []
+        for x in lines:
+            if '   ' in x:
+                index = x.index('   ')
+                r = re.findall(r"([a-f0-9]{2}) ", x[:index+1])
+                print x[:index]
+                print r
+                bytes += r
 
-        res = re.findall(r"([a-f0-9]{2}) ", res)
-        print res
+        # res = '\n'.join([ " " + x.strip()[:]  ])
+        # res = res.replace('dec', '') #pesky problem hot fix
+        print bytes
 
-	print "len: {0}".format(len(res))
+        # res = re.findall(r"([a-f0-9]{2}) ", res)
+        # print res
+
+        print "len: {0}".format(len(bytes))
 
         print "__SHELLCODE__ = [ "
-        print ''.join([ '\\x' + x.strip() for x in res]),
+        print ''.join([ '\\x' + x.strip() for x in bytes]),
         print "];",
  
         print "__SHELLCODE__ = [ "
-        print ''.join([ '\'\\x' + x.strip() + '\', ' for x in res]),
+        print ''.join([ '\'\\x' + x.strip() + '\', ' for x in bytes]),
         print "];",
 
  

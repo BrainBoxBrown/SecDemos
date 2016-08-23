@@ -21,7 +21,6 @@ push		ebx
 ; *Addr of /bin/sh
 ; NULL
 
-
 ; esp points to the top of the stack
 ; hence it points to the address of /bin/sh and a null
 mov		ecx, esp
@@ -37,7 +36,7 @@ int 		0x80
 
 
 mov		ebx, 0x0
-mov 		eax, 0x1
+mov 	eax, 0x1
 int		0x80
 
 string:
