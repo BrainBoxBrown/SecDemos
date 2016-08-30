@@ -30,33 +30,33 @@ def extractPayload():
         val = subprocess.check_output(["objdump", "-d", binname])
         res = val.partition(r"_start")[2]
         res = re.sub(r".*:\w*(.*)", r"\1", res)
-        print res
+        #print res
         lines = res.split("\n")
         bytes = []
         for x in lines:
             if '   ' in x:
                 index = x.index('   ')
                 r = re.findall(r"([a-f0-9]{2}) ", x[:index+1])
-                print x[:index]
-                print r
+                #print x[:index]
+                #print r
                 bytes += r
 
         # res = '\n'.join([ " " + x.strip()[:]  ])
         # res = res.replace('dec', '') #pesky problem hot fix
-        print bytes
+        #print bytes
 
         # res = re.findall(r"([a-f0-9]{2}) ", res)
         # print res
 
         print "len: {0}".format(len(bytes))
 
-        print "__SHELLCODE__ = [ "
+        print "__SHELLCODE__ = [ ",
         print ''.join([ '\\x' + x.strip() for x in bytes]),
         print "];",
  
-        print "__SHELLCODE__ = [ "
-        print ''.join([ '\'\\x' + x.strip() + '\', ' for x in bytes]),
-        print "];",
+        #print "__SHELLCODE__ = [ "
+        #print ''.join([ '\'\\x' + x.strip() + '\', ' for x in bytes]),
+        #print "];",
 
  
 def cleanup(rmbinary=False):
