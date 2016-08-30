@@ -33,5 +33,12 @@ https://s3-ap-southeast-2.amazonaws.com/9447/wargames/binaries.zip
 
 https://s3-ap-southeast-2.amazonaws.com/9447/wargames/wargame/COMP9447_Wargame-disk1.vmdk
 
+https://s3-ap-southeast-2.amazonaws.com/9447/wargames/wargame/COMP9447+Wargame.ovf
+
+https://s3-ap-southeast-2.amazonaws.com/9447/wargames/wargame/COMP9447+Wargame.mf
+
+
+
+
 
 
