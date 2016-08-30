@@ -22,3 +22,16 @@ and here
 
 http://askubuntu.com/questions/454253/how-to-run-32-bit-app-in-ubuntu-64-bit
 
+
+
+
+
+
+
+
+https://s3-ap-southeast-2.amazonaws.com/9447/wargames/binaries.zip
+
+https://s3-ap-southeast-2.amazonaws.com/9447/wargames/wargame/COMP9447_Wargame-disk1.vmdk
+
+
+
